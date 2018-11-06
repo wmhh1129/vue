@@ -1,13 +1,15 @@
 <template>
-  <div></div>
+  <div>
+    {{message}}
+  </div>
 </template>
 
 <script>
   export default {
-    name: 'First'
+    // name: 'Header',
+    props: ['message']
   }
 </script>
 
 <style lang="scss" scoped>
-
 </style>
