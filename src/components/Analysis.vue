@@ -1,13 +1,13 @@
 <template>
-  <div></div>
+  <div>我是报表</div>
 </template>
 
 <script>
   export default {
-    name: 'First'
+    name: 'Analysis'
   }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>

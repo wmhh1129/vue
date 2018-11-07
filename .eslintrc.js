@@ -26,6 +26,7 @@ module.exports = {
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'vue/script-indent': ['error', 2, {'baseIndent': 1}],
-    'indent': 'off'
+    'indent': 'off',
+    "vue/require-v-for-key": "off"
   }
 }
