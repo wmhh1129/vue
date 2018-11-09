@@ -13,6 +13,7 @@ export default new Router({
       path: '/',
       name: 'MainLayout',
       component: MainLayout,
+      redirect: 'park-management',
       children: [
         {
           path: 'park-management',
@@ -26,7 +27,7 @@ export default new Router({
         },
         {
           path: 'accounts',
-          name: 'Account',
+          name: 'Accounts',
           component: Accounts
         }
       ]

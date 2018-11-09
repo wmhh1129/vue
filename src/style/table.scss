@@ -1,0 +1,100 @@
+.list-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 auto;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 1px 0 1px rgba(0, 0, 0, 0.21);
+
+  header {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 20px 0 20px;
+  }
+
+  // 含有查询的header样式
+  .search-header {
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    justify-content: space-between;
+
+    [nz-input], nz-select {
+      min-width: 200px;
+    }
+  }
+
+  .table-content {
+    flex: auto;
+    padding: 20px;
+    overflow: auto;
+
+    .title {
+      font-size: 16px;
+      color: #232323;
+      font-weight: bold;
+      border: 1px solid #e8e8e8;
+      border-bottom: none;
+      padding: 5px 18px;
+      height: 42px;
+      line-height: 32px;
+    }
+
+    .ant-table-thead > tr > th {
+      font-weight: bold;
+    }
+
+    .ant-table-thead > tr > th,
+    .ant-table-tbody > tr > td {
+      text-align: center;
+      padding: 8px 0;
+    }
+
+    .operation-bar {
+      span {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 32px;
+        cursor: pointer;
+        margin-left: 14px;
+
+        &:nth-child(1) {
+          margin-left: 0;
+        }
+
+        &.map {
+          background-color: #179fe8;
+        }
+
+        &.detail {
+          background-color: #08a65c;
+        }
+
+        &.edit {
+          background-color: #f39c14;
+        }
+
+        &.delete {
+          background-color: #db4b3a;
+        }
+
+        &.draw {
+          background-color: #6ebb4b;
+        }
+
+        a {
+          color: #fff;
+        }
+      }
+    }
+
+    tr {
+      &:nth-child(even) {
+        background-color: #f8f8f8;
+      }
+    }
+  }
+}
