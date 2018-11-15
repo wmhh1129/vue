@@ -1,5 +1,6 @@
 <template>
-  <div>sub componment</div>
+  <div>
+  </div>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <div>我是权限管理</div>
     <Sub></Sub>
   </div>
@@ -17,5 +17,8 @@
 </script>
 
 <style scoped>
+  .container {
+    width: 100%;
+  }
 
 </style>

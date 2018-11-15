@@ -38,7 +38,6 @@
     name: 'MainLayout',
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App',
         navMenu: navMenu
       }
     },
