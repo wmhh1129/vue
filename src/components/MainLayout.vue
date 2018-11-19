@@ -2,6 +2,7 @@
   <div class="main-layout">
     <header>
       <div class="title">
+        <Header :message="'title'" ref="head"></Header>
         <span>LOCATION</span>
         <span><i class="iconfont icon-see_map"></i></span>
       </div>
@@ -25,6 +26,8 @@
         </el-menu>
       </div>
     </header>
+    <button v-on:click="add()">sasa</button>
+    <input type="text" width="200px" ref="input">
     <div class="main-container">
       <router-view></router-view>
     </div>
@@ -34,6 +37,7 @@
 <script>
   import Header from '../basic/header'
   import { navMenu } from '../common/core.constants'
+
   export default {
     name: 'MainLayout',
     data () {
@@ -43,6 +47,14 @@
     },
     components: {
       Header
+    },
+    methods: {
+      add () {
+        console.log(this.$refs.head)
+      }
+    },
+    mounted: function () {
+      console.log(this.$refs.input)
     }
   }
 </script>
