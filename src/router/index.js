@@ -4,6 +4,7 @@ import MainLayout from '@/components/MainLayout.vue'
 import ParkLot from '@/components/Parklot.vue'
 import Analysis from '@/components/Analysis.vue'
 import Accounts from '@/components/Account.vue'
+import Login from '@/components/Login.vue'
 
 Vue.use(Router)
 
@@ -31,6 +32,11 @@ export default new Router({
           component: Accounts
         }
       ]
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
     }
   ]
 })

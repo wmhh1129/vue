@@ -38,7 +38,7 @@
 </template>
 
 <script>
-  import axios from 'axios'
+  import axios from '../request/http'
 
   export default {
     name: 'ParkLot',
@@ -52,9 +52,8 @@
     },
     methods: {
       getList () {
-        axios.get('http://mock-server.dbjtech.com/mock/5b332ff0eef1ee23a0fc8471/v0/parking/parking_lot_list')
+        axios.get('parking/parking_lot_list')
           .then(res => {
-            console.log(this)
             this.tableData = res.data.data
           })
           .catch(err => console.log(err))
