@@ -1,5 +1,7 @@
 <template>
-  <div>我是报表</div>
+  <div>
+    我是分析统计界面
+  </div>
 </template>
 
 <script>

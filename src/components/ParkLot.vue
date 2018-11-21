@@ -1,6 +1,7 @@
 <template>
   <div class="list-wrapper">
     <header>
+      <span>{{count}}</span>
       <el-button type="success">新建停车场</el-button>
     </header>
     <div class="table-content" v-if="tableData.length > 0">
@@ -49,6 +50,11 @@
     },
     created () {
       this.getList()
+    },
+    computed: {
+      count() {
+        return this.$store.state.count
+      }
     },
     methods: {
       getList () {

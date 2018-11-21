@@ -26,7 +26,7 @@
         </el-menu>
       </div>
     </header>
-    <button v-on:click="add()">sasa</button>
+    <button @click="add()">sasa</button>
     <input type="text" width="200px" ref="input">
     <div class="main-container">
       <router-view></router-view>
