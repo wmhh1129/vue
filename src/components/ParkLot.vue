@@ -27,7 +27,7 @@
           label="操作"
           width="100">
           <template slot-scope="scope">
-            <el-button type="text" >
+            <el-button type="text">
               <router-link to="analysis-chart">查看</router-link>
             </el-button>
             <el-button type="text">编辑</el-button>
@@ -39,7 +39,8 @@
 </template>
 
 <script>
-  import axios from '../request/http'
+  // import axios from '../request/http'
+  import { getParkLists } from '../common/core.api'
 
   export default {
     name: 'ParkLot',
@@ -52,13 +53,13 @@
       this.getList()
     },
     computed: {
-      count() {
+      count () {
         return this.$store.state.count
       }
     },
     methods: {
       getList () {
-        axios.get('parking/parking_lot_list')
+        getParkLists()
           .then(res => {
             this.tableData = res.data.data
           })

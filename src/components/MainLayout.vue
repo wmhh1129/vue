@@ -26,8 +26,6 @@
         </el-menu>
       </div>
     </header>
-    <button @click="add()">sasa</button>
-    <input type="text" width="200px" ref="input">
     <div class="main-container">
       <router-view></router-view>
     </div>
@@ -49,12 +47,6 @@
       Header
     },
     methods: {
-      add () {
-        console.log(this.$refs.head)
-      }
-    },
-    mounted: function () {
-      console.log(this.$refs.input)
     }
   }
 </script>
