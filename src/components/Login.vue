@@ -5,14 +5,14 @@
         <!--<span class="icon-container">-->
         <!--<i class="iconfont icon-legend"></i>-->
         <!--</span>-->
-        <el-input type="password" v-model="loginForm.username" autocomplete="off"></el-input>
+        <el-input type="text" v-model="loginForm.username" autocomplete="off"></el-input>
       </el-form-item>
       <el-form-item label="密码" prop="password">
         <el-input type="password" v-model="loginForm.password" autocomplete="off"></el-input>
       </el-form-item>
 
       <el-form-item>
-        <el-button type="primary" @click="submitForm('loginForm')">提交</el-button>
+        <el-button type="primary" @click="submitForm()">提交</el-button>
         <el-button @click="resetForm('loginForm')">重置</el-button>
       </el-form-item>
     </el-form>
@@ -20,6 +20,8 @@
 </template>
 
 <script>
+  import { sha3_256 as addSalt } from 'js-sha3'
+  import * as axios from '../request/api'
   export default {
     name: 'Login',
     data () {
@@ -58,8 +60,20 @@
       }
     },
     methods: {
-      submitForm (x) {
-        console.log(x)
+      submitForm () {
+        this.$refs.loginForm.validate(valid => {
+          const userInfo = {
+            captcha: '',
+            username: this.loginForm.username,
+            password: addSalt(this.loginForm.password)
+          }
+          axios.post('login', userInfo).then(res => {
+            if (res.status === 200) {
+              this.$router.push('/')
+            }
+          })
+          // console.log(this.loginForm.username)
+        })
       }
     }
   }

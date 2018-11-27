@@ -2,7 +2,6 @@
   <div class="main-layout">
     <header>
       <div class="title">
-        <Header :message="'title'" ref="head"></Header>
         <span>LOCATION</span>
         <span><i class="iconfont icon-see_map"></i></span>
       </div>

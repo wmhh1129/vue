@@ -1,4 +1,4 @@
-import axios from 'http'
+import axios from './http'
 
 export function get (url, params) {
   return new Promise((resolve, reject) => {
