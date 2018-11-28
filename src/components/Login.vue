@@ -13,7 +13,6 @@
 
       <el-form-item>
         <el-button type="primary" @click="submitForm()">提交</el-button>
-        <el-button @click="resetForm('loginForm')">重置</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -22,6 +21,7 @@
 <script>
   import { sha3_256 as addSalt } from 'js-sha3'
   import * as axios from '../request/api'
+
   export default {
     name: 'Login',
     data () {

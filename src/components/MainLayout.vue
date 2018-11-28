@@ -2,17 +2,9 @@
   <div class="main-layout">
     <header>
       <div class="title">
-        <span>LOCATION</span>
+        <span>停车场开放平台</span>
         <span><i class="iconfont icon-see_map"></i></span>
       </div>
-      <ul class="nav">
-        <li v-for="menu in navMenu" :key="menu.id">
-          <router-link class="link" :to="menu.url">
-            <span><i class="iconfont" :class="menu ? menu.icon : ''"></i></span>
-            <span>{{menu.name}}</span>
-          </router-link>
-        </li>
-      </ul>
       <div class="user-info">
         <el-menu mode="horizontal" background-color="#30b6cb" text-color="#fff">
           <el-submenu index="1">
@@ -26,7 +18,20 @@
       </div>
     </header>
     <div class="main-container">
-      <router-view></router-view>
+      <div class="left-side">
+        <ul class="nav">
+          <li v-for="menu in navMenu" :key="menu.id">
+            <router-link class="link" :to="menu.url">
+              <span><i class="iconfont" :class="menu ? menu.icon : ''"></i></span>
+              <span>{{menu.name}}</span>
+            </router-link>
+          </li>
+        </ul>
+      </div>
+      <div class="right-side">
+        <router-view></router-view>
+      </div>
+
     </div>
   </div>
 </template>
@@ -45,8 +50,7 @@
     components: {
       Header
     },
-    methods: {
-    }
+    methods: {}
   }
 </script>
 
@@ -83,34 +87,12 @@
         }
       }
 
-      .nav {
-        display: flex;
-        list-style: none;
+      /deep/ .el-submenu__title i {
+        color: #fff;
+      }
 
-        .link {
-          height: 60px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          padding: 0 44px;
-          cursor: pointer;
-          color: #fff;
-          overflow: hidden;
-          text-decoration: none;
-
-          &:hover, &.active {
-            background-color: #2199ad;
-          }
-        }
-
-        /deep/ .el-submenu__title i {
-          color: #fff;
-        }
-
-        .el-submenu__icon-arrow {
-          color: #fff;
-        }
+      .el-submenu__icon-arrow {
+        color: #fff;
       }
     }
 
@@ -120,6 +102,37 @@
       display: flex;
       background-color: #f2f7fa;
       padding: 24px;
+
+      .left-side {
+        flex: 1;
+        background-color: skyblue;
+
+        .nav {
+          display: flex;
+          flex-direction: column;
+
+          .link {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+            color: #fff;
+            overflow: hidden;
+            text-decoration: none;
+
+            &:hover, &.active {
+              background-color: #2199ad;
+            }
+          }
+        }
+      }
+
+      .right-side {
+        flex: 6;
+      }
     }
   }
 </style>
