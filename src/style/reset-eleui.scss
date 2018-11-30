@@ -6,3 +6,35 @@
     border: none;
   }
 }
+
+// reset tab style for add-device
+.add-device-tabs {
+  .el-tabs__nav {
+    width: 100%;
+    .el-tabs__active-bar {
+      width: 50%;
+    }
+    .el-tabs__item {
+      padding: 0;
+      text-align: center;
+      width: 50%;
+    }
+  }
+}
+
+.el-dialog__body {
+  padding: 10px;
+}
+
+.el-dialog__header {
+  padding: 0;
+}
+
+.el-dialog__headerbtn {
+  z-index: 30;
+}
+
+
+
+
+

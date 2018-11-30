@@ -27,6 +27,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'vue/script-indent': ['error', 2, {'baseIndent': 1}],
     'indent': 'off',
-    "vue/require-v-for-key": "off"
+    "vue/require-v-for-key": "off",
+    "space-before-function-paren": 'never'
   }
 }

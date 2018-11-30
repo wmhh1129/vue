@@ -4,8 +4,8 @@
       <el-button type="success" @click="dialogVisible = true">新建停车场</el-button>
       <el-dialog
         :visible.sync="dialogVisible"
-        width="30%">
-        <subb :title="'标题'"></subb>
+        width="760px">
+        <add-device-modal></add-device-modal>
         <!--<span>这是一段信息</span>-->
         <!--<span slot="footer" class="dialog-footer">-->
             <!--<el-button @click="dialogVisible = false">取 消</el-button>-->
@@ -60,7 +60,7 @@
   // import axios from '../request/http'
   import { getParkLists } from '../common/core.api'
   import TablePage from './Table-page'
-  import Subb from './Sub'
+  import AddDeviceModal from './add-device-modal/Add-device'
 
   export default {
     name: 'ParkLot',
@@ -113,7 +113,7 @@
         return this.$store.state.count
       }
     },
-    components: {TablePage, Subb},
+    components: {TablePage, AddDeviceModal},
     methods: {
       getList () {
         getParkLists()
