@@ -24,7 +24,7 @@
 
   export default {
     name: 'Login',
-    data () {
+    data() {
       const usernameVerify = (rule, value, callback) => {
         if (value === '') {
           callback(new Error('请输入用户名'))
@@ -60,7 +60,7 @@
       }
     },
     methods: {
-      submitForm () {
+      submitForm() {
         this.$refs.loginForm.validate(valid => {
           const userInfo = {
             captcha: '',

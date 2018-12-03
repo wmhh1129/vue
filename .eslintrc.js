@@ -28,6 +28,6 @@ module.exports = {
     'vue/script-indent': ['error', 2, {'baseIndent': 1}],
     'indent': 'off',
     "vue/require-v-for-key": "off",
-    "space-before-function-paren": 'never'
+    "space-before-function-paren": [2, {"anonymous": "never", "named": "never"}]
   }
 }

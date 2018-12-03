@@ -8,8 +8,8 @@
         <add-device-modal></add-device-modal>
         <!--<span>这是一段信息</span>-->
         <!--<span slot="footer" class="dialog-footer">-->
-            <!--<el-button @click="dialogVisible = false">取 消</el-button>-->
-            <!--<el-button type="primary" @click="dialogVisible = false">确 定</el-button>-->
+        <!--<el-button @click="dialogVisible = false">取 消</el-button>-->
+        <!--<el-button type="primary" @click="dialogVisible = false">确 定</el-button>-->
         <!--</span>-->
       </el-dialog>
     </header>
@@ -64,7 +64,7 @@
 
   export default {
     name: 'ParkLot',
-    data () {
+    data() {
       return {
         tableData: [],
         tabelLoading: false,
@@ -105,17 +105,17 @@
         dialogVisible: false
       }
     },
-    created () {
+    created() {
       this.getList()
     },
     computed: {
-      count () {
+      count() {
         return this.$store.state.count
       }
     },
     components: {TablePage, AddDeviceModal},
     methods: {
-      getList () {
+      getList() {
         getParkLists()
           .then(res => {
             this.tableData = res.data.data
@@ -123,17 +123,17 @@
           })
           .catch(err => console.log(err))
       },
-      handleSizeChange (size) {
+      handleSizeChange(size) {
         this.limit = size
         console.log(' this.limit:', this.limit)
       },
       // 切换页码
-      handleCurrentChange (index) {
+      handleCurrentChange(index) {
         this.page = index
         console.log(' this.page:', this.page)
       },
       // 操作
-      handleCommand (command) {
+      handleCommand(command) {
         console.log(command)
       }
     }

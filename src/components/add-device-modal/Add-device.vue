@@ -2,15 +2,22 @@
   <div>
     <el-tabs class="add-device-tabs" v-model="activeTab" @tab-click="handleClick">
       <el-tab-pane label="单个添加" name="singleAdd">
-        <el-form :label-position="right" label-width="80px" :model="formLabelAlign">
+        <el-form :label-position="'right'" label-width="80px" :model="formModel">
           <el-form-item label="IMEI" required>
-            <el-input v-model="formLabelAlign.imei"></el-input>
+            <el-input v-model="formModel.imei"></el-input>
           </el-form-item>
           <el-form-item label="激活码" required>
-            <el-input v-model="formLabelAlign.activation_code"></el-input>
+            <el-input v-model="formModel.activation_code"></el-input>
           </el-form-item>
           <el-form-item label="应用">
-            <el-input v-model="formLabelAlign.app"></el-input>
+            <el-select v-model="formModel.app" placeholder="活动区域">
+              <el-option label="应用一" value="shanghai"></el-option>
+              <el-option label="应用二" value="beijing"></el-option>
+            </el-select>
+          </el-form-item>
+          <el-form-item>
+            <el-button plain @click="cancel">取消</el-button>
+            <el-button type="primary" @click="submit">添加</el-button>
           </el-form-item>
         </el-form>
       </el-tab-pane>
@@ -24,10 +31,10 @@
 <script>
   export default {
     name: 'AddDeviceModal',
-    data () {
+    data() {
       return {
         activeTab: 'singleAdd',
-        formLabelAlign: {
+        formModel: {
           imei: '',
           activation_code: '',
           app: ''
@@ -35,8 +42,12 @@
       }
     },
     methods: {
-      handleClick (tab, event) {
+      handleClick(tab, event) {
         console.log(tab, event)
+      },
+      cancel() {
+      },
+      submit() {
       }
     }
   }

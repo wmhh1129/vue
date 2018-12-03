@@ -42,7 +42,7 @@
 
   export default {
     name: 'MainLayout',
-    data () {
+    data() {
       return {
         navMenu: navMenu
       }

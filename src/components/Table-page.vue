@@ -5,10 +5,10 @@
       <!--数据列-->
       <el-table-column v-for="(column, index) in columns" :prop="column.prop" :key="index" :label="column.label">
         <!--<template slot-scope="scope">-->
-          <!--<template v-if="column.formatter">-->
-            <!--<span v-html="column.formatter(scope.row)"></span>-->
-          <!--</template>-->
-          <!--<template v-else><span>{{scope.row[column.prop]}}</span></template>-->
+        <!--<template v-if="column.formatter">-->
+        <!--<span v-html="column.formatter(scope.row)"></span>-->
+        <!--</template>-->
+        <!--<template v-else><span>{{scope.row[column.prop]}}</span></template>-->
         <!--</template>-->
       </el-table-column>
       <!--按钮操作组-->
@@ -70,17 +70,17 @@
     },
     methods: {
       // 切换每页显示的数量
-      handleSizeChange (size) {
+      handleSizeChange(size) {
         this.$emit('handleSizeChange', size)
         this.pageIndex = 1
       },
       // 切换页码
-      handleCurrentChange (index) {
+      handleCurrentChange(index) {
         this.$emit('handleCurrentChange', index)
         this.pageIndex = index
       },
       // 操作
-      handleCommand (command) {
+      handleCommand(command) {
         this.$emit('handleCommand', command)
       }
     }

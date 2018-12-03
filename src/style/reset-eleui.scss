@@ -7,7 +7,7 @@
   }
 }
 
-// reset tab style for add-device
+// reset tab style for add-device modal
 .add-device-tabs {
   .el-tabs__nav {
     width: 100%;
@@ -19,6 +19,10 @@
       text-align: center;
       width: 50%;
     }
+  }
+
+  .el-tabs__content {
+    padding: 24px;
   }
 }
 
